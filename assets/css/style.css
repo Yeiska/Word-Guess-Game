@@ -10,7 +10,10 @@
     margin-top: 100px;
     width: 400px;
 }
-
+h1{
+    font-size: 50px;
+    margin-top: 0px;
+}
 h1, h2, h3, h4, p{
     margin-bottom: 10px;
 }
@@ -21,4 +24,5 @@ img{
 #space{
     border-bottom-color: black;
     letter-spacing: 10px;
+    border-bottom-color: black, solid, 2px;
 }
