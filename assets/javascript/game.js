@@ -3,24 +3,27 @@ window.onload = function () {
     var game = ["electricity", "current", "tension", "alternator", "battery"];
     var guesses = [];//Stored guesses
     var numberGuessesRemaining = 15;//count guesses
-    var guessesRemaining;
-    var space;
 
     //hidde word and show only length as spaces!!!
     var space = document.getElementById("space");
-    space += wordGuess;
-    space.innerHTML;
+    // space += wordGuess;
+    // space.innerHTML;
 
     //Seleccting word to quess from array game
     var wordToGuess = game[Math.floor(Math.random() * game.length)];
     console.log(wordToGuess);
 
+    var hiddenWord = "";
+
+    for ( var i = 0; i < wordToGuess.length; i++){
+        hiddenWord += "_";
+    }
+
+    space.textContent = hiddenWord;
+    var hiddenWordArray = hiddenWord.split("");
     //GETING LENGTH OF THE WORD WE'RE TRYING TO GUESS
-    var wordGuess = wordToGuess.length;
-    console.log(wordGuess);
     
     var wins = "";
-    var space = wordToGuess.split("  ");
     
     //adding number Guesses Remaining to html
     var guessesRemaining = document.getElementById("guessesRemaining");
@@ -33,51 +36,53 @@ window.onload = function () {
         var letter = event.key.toLowerCase();
         
         if (wordToGuess.indexOf(letter) > -1) {
-            
-            guesses += letter;
-            //show letters alredy guesses
-            divGuesses.textContent = guesses;
-            divGuesses.innerHTML;
-            //sustract 1 from number Guesses Remaining (15)
-            numberGuessesRemaining--;
-            document.getElementById("guessesRemaining").innerHTML = numberGuessesRemaining;
-            console.log(numberGuessesRemaining);
-            
-            //show letters alredy guesses
-            guesses.textContent += guesses;
-            guesses.innerHTML;
-            
+           for (var i = 0; i < wordToGuess.length; i++) {
+                if (letter === wordToGuess[i]) {
+                    console.log(hiddenWordArray);
+                    hiddenWordArray[i] = letter;
+                    space.textContent = hiddenWordArray.join("");
+                }
+                // for (var i = 0; i < guesses.length; i++) {
+                //     if (numberGuessesRemaining + space === guesses.length) {
+                //         wins.innerHTML = "You Win!";
+                //     }
+                //     if (numberGuessesRemaining < 1) {
+                //         //guessesRemaining.innerHTML =;
+                //         alert("Game Over");
+                //     }
+                // }
+            }
         } else {
             numberGuessesRemaining--;
-            document.getElementById("guessesRemaining").innerHTML = numberGuessesRemaining;
+            guessesRemaining.innerHTML = numberGuessesRemaining;
             console.log(numberGuessesRemaining);
         }
-        for (var i = 0; i < wordGuess; i++) {
-            if (letter === wordToGuess[i]) {
-                space += wordToGuess[i];
-                space.innerHTML;
-                console.log(space);
+        // for (var i = 0; i < wordGuess; i++) {
+        //     if (letter === wordToGuess[i]) {
+        //         space += wordToGuess[i];
+        //         space.innerHTML;
+        //         console.log(space);
 
-                //sustract 1 from number Guesses Remaining
-                numberGuessesRemaining--;
-                numberGuessesRemaining.innerHTML;
+        //         //sustract 1 from number Guesses Remaining
+        //         numberGuessesRemaining--;
+        //         numberGuessesRemaining.innerHTML;
 
-            } else {
-                guesses += letter;
-                guesses.innerHTML;
-                numberGuessesRemaining--;
-                numberGuessesRemaining.innerHTML;
-            }
-            for (var i = 0; i < guesses.length; i++) {
-                if (numberGuessesRemaining + space === guesses.length) {
-                    wins.innerHTML = "You Win!";
-                }
-                if (numberGuessesRemaining < 1) {
-                    //guessesRemaining.innerHTML =;
-                    alert("Game Over");
-                }
-            }
-        }
+        //     } else {
+        //         guesses += letter;
+        //         guesses.innerHTML;
+        //         numberGuessesRemaining--;
+        //         numberGuessesRemaining.innerHTML;
+        //     }
+        //     for (var i = 0; i < guesses.length; i++) {
+        //         if (numberGuessesRemaining + space === guesses.length) {
+        //             wins.innerHTML = "You Win!";
+        //         }
+        //         if (numberGuessesRemaining < 1) {
+        //             //guessesRemaining.innerHTML =;
+        //             alert("Game Over");
+        //         }
+        //     }
+        // }
     }
 }
 
