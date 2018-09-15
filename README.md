@@ -15,7 +15,8 @@ When the player loses, increase the Losses counter and restart the game without 
 
 ## app page
 These app will run in the browser, and feature dynamically updated HTML and CSS powered by JavaScript.
-![app Image](/assets/images/GuessGame.png)
+
+
 
 ## You can see the app on the following link
 https://yeiska.github.io/Word-Guess-Game/
