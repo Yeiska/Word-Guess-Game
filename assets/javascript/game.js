@@ -80,3 +80,31 @@ function reset() {
     guessesRemaining = document.getElementById("guessesRemaining");
     guessesRemaining.textContent = numberGuessesRemaining;
 }
+
+// for (var i = 0; i < wordGuess; i++) {
+        //     if (letter === wordToGuess[i]) {
+        //         space += wordToGuess[i];
+        //         space.innerHTML;
+        //         console.log(space);
+
+        //         //sustract 1 from number Guesses Remaining
+        //         numberGuessesRemaining--;
+        //         numberGuessesRemaining.innerHTML;
+
+        //     } else {
+        //         guesses += letter;
+        //         guesses.innerHTML;
+        //         numberGuessesRemaining--;
+        //         numberGuessesRemaining.innerHTML;
+        //     }
+        //     for (var i = 0; i < guesses.length; i++) {
+        //         if (numberGuessesRemaining + space === guesses.length) {
+        //             wins.innerHTML = "You Win!";
+        //         }
+        //         if (numberGuessesRemaining < 1) {
+        //             //guessesRemaining.innerHTML =;
+        //             alert("Game Over");
+        //         }
+        //     }
+        // }
+    
